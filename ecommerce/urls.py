@@ -18,10 +18,27 @@ from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+from register import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('store.urls'))
+    path('register/', v.register, name="register"),
+    path('bye/', v.bye_page, name="bye"),
+    path('', include('store.urls')),
+
+    path('', include("django.contrib.auth.urls")),
+
 ]
 
+
+
+
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+admin.site.site_header = "King's Motors Kenya Admin Panel"
+admin.site.site_title = "King's Motors Kenya"
+admin.site.index_title = "King's Motors Kenya"
