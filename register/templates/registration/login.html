@@ -1,0 +1,15 @@
+{% extends 'store/main.html'%}
+
+{% block title %} Login | Kings Motors Kenya {% endblock title%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Login</button>
+        <p>Don't have an Account? Create one <a href="/register" class="">Here</a></p>
+    </form>
+
+{% endblock content %}
