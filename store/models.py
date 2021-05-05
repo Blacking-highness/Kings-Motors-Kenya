@@ -23,7 +23,7 @@ FUEL_TYPES = (
     ('petrol', 'PETROL'),
 )
 
-FUEL_UNITS = (
+ENGINE_UNITS = (
 	('select', 'SELECT'),
     ('liters','LITERS'),
     ('cc', 'CC'),
@@ -35,8 +35,8 @@ FUEL_UNITS = (
 class Product(models.Model):
 	name = models.CharField(max_length=200)
 	model = models.CharField(max_length = 200)
-	fuel_capacity = models.FloatField(default=False, blank=True, null=True)
-	fuel_capacity_unit = models.CharField(max_length=10, choices=FUEL_UNITS, default='liters', blank=True, null=True)
+	engine_capacity = models.FloatField(default=False, blank=True, null=True)
+	engine_capacity_unit = models.CharField(max_length=10, choices=ENGINE_UNITS, default='liters', blank=True, null=True)
 	fuel_type = models.CharField(max_length=20, choices=FUEL_TYPES, default='select')
 	transmission = models.CharField(max_length=20, choices=TRANSMISSIONS, default='select')
 	price = models.FloatField()
