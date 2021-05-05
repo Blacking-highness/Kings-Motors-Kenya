@@ -17,6 +17,13 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 
+def details(request):
+	products = Product.objects.all()
+
+	context = {'products': products}
+	return render(request, 'store/details.html', context)
+
+
 def cart(request):
 	data = cartData(request)
 
