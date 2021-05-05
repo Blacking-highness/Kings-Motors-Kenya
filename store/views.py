@@ -4,6 +4,10 @@ import json
 import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
+from allauth.account.signals import user_signed_up
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+
 
 def store(request):
 	data = cartData(request)
@@ -97,3 +101,8 @@ def processOrder(request):
 		)
 
 	return JsonResponse('Payment submitted..', safe=False)
+
+# @receiver(user_signed_up)
+# def after_user_signed_up(request, user):
+
+#     customer = Customer.objects.create(user = user.username, name=user.name, email=user.email)

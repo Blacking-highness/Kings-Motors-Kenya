@@ -1,27 +1,26 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-    <div class="row">
-        {% for product in products %}
+<div class="row">
+    {% for product in products %}
         <div class="col-lg-4">
             <img class="thumbnail" src="{{product.imageURL}}">
+        </div>
+        <div class="col-lg-8">
             <div class="box-element product">
                 <h4><strong>{{product.name}}</strong></h4>
                 <hr>
                 <h5 style="display: inline-block;"><strong>Model {{product.model}}</strong></h5>
                 <h4 style="float: right">{{product.transmission}}</h4>
+                <h4>KSh. {{product.price}} only</h4>
             </div>
             <div class="box-element product">
-                
+                <h6>{{product.fuel_type}}</h6>
+                <h6>{{product.engine_capacity}} {{product.engine_capacity_unit}}s</h6>
                 <p>{{product.details}}</p>
-                <h6 style="font-size: 18px;"><strong>KSh.{{product.price}}</strong></h6>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="box-element product">
-                <img class="thumbnail-display" src="{{product.image1URL}}">
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
+
+</div>
 {% endblock content %}

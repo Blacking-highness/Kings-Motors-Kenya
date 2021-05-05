@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 
 class Customer(models.Model):
@@ -25,7 +26,7 @@ FUEL_TYPES = (
 
 ENGINE_UNITS = (
 	('select', 'SELECT'),
-    ('liters','LITERS'),
+    ('liter','LITER'),
     ('cc', 'CC'),
 )
 
@@ -36,22 +37,25 @@ class Product(models.Model):
 	name = models.CharField(max_length=200)
 	model = models.CharField(max_length = 200)
 	engine_capacity = models.FloatField(default=False, blank=True, null=True)
-	engine_capacity_unit = models.CharField(max_length=10, choices=ENGINE_UNITS, default='liters', blank=True, null=True)
+	engine_capacity_unit = models.CharField(max_length=10, choices=ENGINE_UNITS, default='select', blank=True, null=True)
 	fuel_type = models.CharField(max_length=20, choices=FUEL_TYPES, default='select')
 	transmission = models.CharField(max_length=20, choices=TRANSMISSIONS, default='select')
 	price = models.FloatField()
 	digital = models.BooleanField(default=False,null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
 	details = models.TextField(default=True, max_length=2000)
-	image1 = models.ImageField(null=True, blank=True)
-	image2 = models.ImageField(null=True, blank=True)
-	image3 = models.ImageField(null=True, blank=True)
-	image4 = models.ImageField(null=True, blank=True)
-	image5 = models.ImageField(null=True, blank=True)
-	image6 = models.ImageField(null=True, blank=True)
-	image7 = models.ImageField(null=True, blank=True)
-	image8 = models.ImageField(null=True, blank=True)
-	image9 = models.ImageField(null=True, blank=True)
+	
+	
+	
+	image1  = models.ImageField(null=True, blank=True)
+	image2  = models.ImageField(null=True, blank=True)
+	image3  = models.ImageField(null=True, blank=True)
+	image4  = models.ImageField(null=True, blank=True)
+	image5  = models.ImageField(null=True, blank=True)
+	image6  = models.ImageField(null=True, blank=True)
+	image7  = models.ImageField(null=True, blank=True)
+	image8  = models.ImageField(null=True, blank=True)
+	image9  = models.ImageField(null=True, blank=True)
 	image10 = models.ImageField(null=True, blank=True)
 	image11 = models.ImageField(null=True, blank=True)
 	image12 = models.ImageField(null=True, blank=True)
@@ -127,3 +131,5 @@ class ShippingAddress(models.Model):
 
 	def __str__(self):
 		return self.address
+
+
