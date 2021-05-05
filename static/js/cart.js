@@ -42,6 +42,7 @@ function addCookieItem(productId, action){
 	if (action == 'add'){
 		if (cart[productId] == undefined){
 		cart[productId] = {'quantity':1}
+		alert("Added to cart");
 
 		}else{
 			cart[productId]['quantity'] += 1
@@ -53,6 +54,7 @@ function addCookieItem(productId, action){
 
 		if (cart[productId]['quantity'] <= 0){
 			console.log('Item should be deleted')
+			alert("Removed from cart");
 			delete cart[productId];
 		}
 	}
