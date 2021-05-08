@@ -17,11 +17,10 @@ def register(responce):
                                     password=form.cleaned_data['password1'],
                                     )
 
-            # new_user_ = User.objects.create_user(username = form.cleaned_data['user'],
-            #             email = form.cleaned_data['email'],
-            #             password = form.cleaned_data['password1'])
+            new_user_ = User.objects.filter()
+            
 
-            new_customer = Customer.objects.create(user=new_user,
+            new_customer = Customer.objects.create(user=new_user_,
                            name = form.cleaned_data['username'],
                            email = form.cleaned_data['email'],)
             login(request, new_user)
