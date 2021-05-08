@@ -102,7 +102,3 @@ def processOrder(request):
 
 	return JsonResponse('Payment submitted..', safe=False)
 
-# @receiver(user_signed_up)
-# def after_user_signed_up(request, user):
-
-#     customer = Customer.objects.create(user = user.username, name=user.name, email=user.email)

@@ -1,5 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
+from django.contrib.auth import authenticate, login
+from store.models import Customer
+from django.db import models
+from allauth.account.signals import user_signed_up
+from django.dispatch import receiver
+from django.contrib.auth.models import User
 
 # Create your views here.
 def register(responce):
@@ -7,6 +13,10 @@ def register(responce):
         form = RegisterForm(responce.POST)
         if form.is_valid():
             form.save()
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
         
         return redirect('/')
     else:
@@ -18,3 +28,9 @@ def register(responce):
 def bye_page(responce):
     context = {}
     return render(responce, "bye/bye.html", context)
+
+
+@receiver(user_signed_up, **kwargs)
+def after_user_signed_up(request, user):
+
+    customer = Customer.objects.create(user = user, name=user.name, email=user.email)
