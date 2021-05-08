@@ -30,7 +30,7 @@ def bye_page(responce):
     return render(responce, "bye/bye.html", context)
 
 
-@receiver(user_signed_up, **kwargs)
-def after_user_signed_up(request, user):
+# @receiver(user_signed_up, **kwargs)
+# def after_user_signed_up(request, user):
 
-    customer = Customer.objects.create(user = user, name=user.name, email=user.email)
+#     customer = Customer.objects.create(user = user, name=user.name, email=user.email)
