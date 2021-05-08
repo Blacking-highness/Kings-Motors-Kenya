@@ -6,6 +6,7 @@ from django.dispatch import receiver
 from django.contrib.auth import get_user_model
 
 from django.contrib.auth.models import User
+from pprint import pprint
 #from django.config import settings
 
 
@@ -143,8 +144,6 @@ class ShippingAddress(models.Model):
 @receiver(post_save, sender=User)
 def create_or_save_user_profile(sender, created, instance, **kwargs):
 	if created:
-		#Customer.objects.create(user=instance)
-		#customer = Customer.objects.create(name=sender.username, email=sender.email)
-		Customer.objects.create(name=sender.username, email=sender.email)
+		obj = sender.objects.get()
+		Customer.objects.create(user=obj, name=sender.username, email=sender.email)
 
-	#instance.customer.save()

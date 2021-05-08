@@ -16,6 +16,14 @@ def register(responce):
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password1'],
                                     )
+
+            # new_user_ = User.objects.create_user(username = form.cleaned_data['user'],
+            #             email = form.cleaned_data['email'],
+            #             password = form.cleaned_data['password1'])
+
+            new_customer = Customer.objects.create(user=new_user,
+                           name = form.cleaned_data['username'],
+                           email = form.cleaned_data['email'],)
             login(request, new_user)
         
         return redirect('/')
@@ -29,8 +37,3 @@ def bye_page(responce):
     context = {}
     return render(responce, "bye/bye.html", context)
 
-
-# @receiver(user_signed_up, **kwargs)
-# def after_user_signed_up(request, user):
-
-#     customer = Customer.objects.create(user = user, name=user.name, email=user.email)
