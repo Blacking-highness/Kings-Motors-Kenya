@@ -96,6 +96,28 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'kingsmotorskenya',
+#         'USER': "prince@kingsmotorskenya",
+#         'PASSWORD': '',
+#         'HOST': 'kingsmotorskenya.mysql.database.azure.com',
+#         'PORT': '3306',
+#         # 'OPTIONS': {
+#         #     'driver': 'ODBC Driver 13 for SQL Server',
+#         #     'MARS_Connection': 'True',
+#         # }
+#     }
+# }
+
+# cnx = mysql.connector.connect(user="prince@kingsmotorskenya", 
+# password={your_password}, 
+# host="kingsmotorskenya.mysql.database.azure.com", 
+# port=3306, 
+# database={your_database}, s
+# sl_ca={ca-cert filename}, 
+# ssl_verify_cert=true)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
