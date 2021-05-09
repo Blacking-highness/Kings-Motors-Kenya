@@ -144,6 +144,7 @@ class ShippingAddress(models.Model):
 @receiver(post_save, sender=User)
 def create_or_save_user_profile(sender, created, instance, **kwargs):
 	if created:
-		obj = sender.objects.get()
-		Customer.objects.create(user=obj, name=sender.username, email=sender.email)
+		obj = sender.objects.last()
+
+		Customer.objects.create(user=obj, name=obj.username, email=obj.email)
 

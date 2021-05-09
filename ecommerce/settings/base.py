@@ -14,7 +14,7 @@ import os
 
 AUTHENTICATION_BACKENDS = {
     "django.contrib.auth.backends.ModelBackend",
-    "register.backends.EmailBackend"
+    #"register.backends.EmailBackend"
 }
 
 
@@ -77,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -152,7 +153,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA_URL = '/images/'
+MEDIA_URL = '/images/media/'
 
 
 
