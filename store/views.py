@@ -102,3 +102,6 @@ def processOrder(request):
 
 	return JsonResponse('Payment submitted..', safe=False)
 
+def search(request):
+	context = {}
+	return render(request, 'store/results.html', context)
