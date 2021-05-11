@@ -9,6 +9,6 @@ ALLOWED_HOSTS = ['192.168.0.101:8000','*']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if DEBUG:
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'static/images/media')
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 else:
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/images/media')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
