@@ -1,0 +1,8 @@
+✔️
+Login and Sign up Customer Complication ✔️
+Search Functionality ✔️
+
+Todo
+find out out how to make images show
+Session expiry
+Tweak Backend.py
