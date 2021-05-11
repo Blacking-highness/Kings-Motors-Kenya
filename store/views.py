@@ -114,3 +114,12 @@ def search(request):
 		context = {}
 
 	return render(request, 'store/results.html', context)
+
+
+def contact(request):
+	context = {}
+	return render(request, 'store/contact.html', context)
+
+def faq(request):
+	context = {}
+	return render(request, 'store/faq.html', context)

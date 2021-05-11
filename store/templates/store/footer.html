@@ -7,17 +7,18 @@
         <h3>Kings Motors <span>Kenya</span></h3>
         
         <p class="footer-links">
-        <a href="#">Home</a>
+        <a href="{% url 'store' %}">Home</a>
+        <!--
         ·
-        <a href="#">Blog</a>
+        <a href="#">Blog</a> -->
         ·
-        <a href="#">Pricing</a>
+        <a href="{% url 'details' %}">Details</a>
         ·
         <a href="#">About</a>
         ·
         <a href="#">Faq</a>
         ·
-        <a href="#">Contact</a>
+        <a href="{% url 'contact' %}">Contact</a>
         </p>
         
         <p class="footer-company-name">Kings Motors Kenya &copy; 2021</p>

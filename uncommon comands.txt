@@ -2,3 +2,4 @@ $env:DJANGO_SETTINGS_MODULE = "ecommerce.settings.dev"
 
 python manage.py migrate --run-syncdb
 
+xsmtpsib-f458a513c82b0907ec5aca94c11645f67bfa2c0fc30195c074929afd57110b5d-qDxKRYQ56g7b3mck    Key for SMTP
