@@ -1,1 +1,1 @@
-web: bin/start-nginx-debug bundle exec unicorn -c config/unicorn.rb gunicorn ecommerce.wsgi
+web: gunicorn ecommerce.wsgi
