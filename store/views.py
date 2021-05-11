@@ -103,5 +103,14 @@ def processOrder(request):
 	return JsonResponse('Payment submitted..', safe=False)
 
 def search(request):
-	context = {}
+	if request.method == "POST":
+		searched = request.POST.get('searched')
+		search_items = Product.objects.filter(name__contains=searched)
+
+
+		context = {'searched': searched,
+					'search_items': search_items}
+	else:
+		context = {}
+
 	return render(request, 'store/results.html', context)

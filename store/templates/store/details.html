@@ -18,6 +18,11 @@
                 <h6>{{product.fuel_type}}</h6>
                 <h6>{{product.engine_capacity}} {{product.engine_capacity_unit}}s</h6>
                 <p>{{product.details}}</p>
+                
+                <button data-product="{{product.id}}" 
+                        data-action="add" 
+                        class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
             </div>
         </div>
     {% endfor %}
