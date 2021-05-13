@@ -101,7 +101,7 @@
 			</li>
 			{% if user.is_authenticated %}
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">Your account</a>
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">{{user.username | title }}</a>
 				<div class="dropdown-menu">
 					{% if user.is_superuser %}
 					<a class="dropdown-item" href="admin">Admin</a>
