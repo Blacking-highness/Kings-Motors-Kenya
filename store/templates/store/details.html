@@ -1,5 +1,6 @@
 {% extends 'store/main.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
 <div class="row">
     {% for product in products %}
@@ -12,7 +13,7 @@
                 <hr>
                 <h5 style="display: inline-block;"><strong>Model {{product.model}}</strong></h5>
                 <h4 style="float: right">{{product.transmission}}</h4>
-                <h4>KSh. {{product.price}} only</h4>
+                <h4>KSh. {{product.price | floatformat:2 | intcomma }} only</h4>
             </div>
             <div class="box-element product">
                 <h6>{{product.fuel_type}}</h6>
