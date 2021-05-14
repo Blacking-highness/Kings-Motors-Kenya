@@ -18,7 +18,7 @@
             <div class="box-element product">
                 <h6>{{product.fuel_type}}</h6>
                 <h6>{{product.engine_capacity}} {{product.engine_capacity_unit}}s</h6>
-                <p>{{product.details}}</p>
+                <p>{{product.details | linebreaks }}</p>
                 
                 <button data-product="{{product.id}}" 
                         data-action="add" 
