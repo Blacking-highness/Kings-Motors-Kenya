@@ -65,13 +65,7 @@ class Product(models.Model):
 	image8  = models.ImageField(null=True, blank=True)
 	image9  = models.ImageField(null=True, blank=True)
 	image10 = models.ImageField(null=True, blank=True)
-	image11 = models.ImageField(null=True, blank=True)
-	image12 = models.ImageField(null=True, blank=True)
-	image13 = models.ImageField(null=True, blank=True)
-	image14 = models.ImageField(null=True, blank=True)
-	image15 = models.ImageField(null=True, blank=True)
-	image16 = models.ImageField(null=True, blank=True)
-	image17 = models.ImageField(null=True, blank=True)
+	
 
 	
 

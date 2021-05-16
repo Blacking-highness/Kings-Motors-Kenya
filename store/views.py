@@ -1,12 +1,15 @@
+from django.db.models import query
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
 import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
+from .filters import ProductFilter
 from allauth.account.signals import user_signed_up
 from django.dispatch import receiver
 from django.contrib.auth.models import User
+from django.db.models import Q
 
 
 def store(request):
@@ -17,14 +20,23 @@ def store(request):
 	items = data['items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+
+	myFilter = ProductFilter(request.GET, queryset=products)
+	products = myFilter.qs
+
+
+	context = {'products':products, 'cartItems':cartItems, 'myFilter': myFilter}
 	return render(request, 'store/store.html', context)
 
 
 def details(request):
 	products = Product.objects.all()
 
-	context = {'products': products}
+	myFilter = ProductFilter(request.GET, queryset=products)
+	products = myFilter.qs
+
+	context = {'products': products,
+				'myFilter': myFilter}
 	return render(request, 'store/details.html', context)
 
 
@@ -105,7 +117,12 @@ def processOrder(request):
 def search(request):
 	if request.method == "POST":
 		searched = request.POST.get('searched')
-		search_items = Product.objects.filter(name__contains=searched)
+		search_items = Product.objects.filter(Q(name__contains=searched)
+											| Q(fuel_type=searched)
+											| Q(model=searched) 
+											| Q(transmission=searched)
+											| Q(details=searched)
+											| Q(price=searched))
 
 
 		context = {'searched': searched,

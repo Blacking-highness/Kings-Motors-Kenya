@@ -1,5 +1,8 @@
 {% extends 'store/main.html' %}
 {% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 <div class="row">
     
@@ -28,7 +31,7 @@
                                 <hr>
                                 <h5 style="display: inline-block;"><strong>Model {{search_item.model}}</strong></h5>
                                 <h4 style="float: right;">{{search_item.transmission}}</h4>
-                                <h4>KSh. {{search_item.price}} only</h4>
+                                <h4>KSh. {{search_item.price | floatformat:2 | intcomma }} only</h4>
                                 <a class="btn btn-outline-success" href="{% url 'details' %}">View</a>
                                 <button data-product="{{search_item.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                             </div>
