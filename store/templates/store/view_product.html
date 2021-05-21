@@ -5,26 +5,150 @@
 {% block content %}
 	<div class="row">
             <div class="col-lg-4">
-            <img class="thumbnail" src="{{product.imageURL}}">
-        </div>
-        <div class="col-lg-8">
-            <div class="box-element product">
-                <h4><strong>{{product.name}}</strong></h4>
-                <hr>
-                <h5 style="display: inline-block;"><strong>Model {{product.model}}</strong></h5>
-                <h4 style="float: right">{{product.transmission}}</h4>
-                <h4>KSh. {{product.price | floatformat:2 | intcomma }} only</h4>
+                <img class="thumbnail" src="{{product.imageURL}}">
             </div>
-            <div class="box-element product">
-                <h6>{{product.fuel_type}}</h6>
-                <h6>{{product.engine_capacity}} {{product.engine_capacity_unit}}s</h6>
-                <p>{{product.details | linebreaks }}</p>
-                
-                <button data-product="{{product.id}}" 
-                        data-action="add" 
-                        class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 
+            <div class="col-lg-8">
+                <div class="box-element product">
+                    <h4><strong>{{product.name}}</strong></h4>
+                    <hr>
+                    <h5 style="display: inline-block;"><strong>Model {{product.model}}</strong></h5>
+                    <h4 style="float: right">{{product.transmission}}</h4>
+                    <h4>KSh. {{product.price | floatformat:2 | intcomma }} only</h4>
+                </div>
+
+                <div class="box-element product">
+                    <h6>{{product.fuel_type}}</h6>
+                    <h6>{{product.engine_capacity}} {{product.engine_capacity_unit}}s</h6>
+                    <p>{{product.details | linebreaks }}</p>
+                    <button data-product="{{product.id}}" 
+                            data-action="add" 
+                            class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                </div>
             </div>
-        </div>
 	</div>
+    
+    <div class="row">
+        {% if product.image1URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image1URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image2URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image2URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image3URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image3URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image4URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image4URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image5URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image5URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image6URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image6URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image7URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image7URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image8URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image8URL}}">
+                </div>
+        {% endif %}
+        
+        {% if product.image10URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image10URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image9URL %}
+                <div class="col-lg-4">
+                        <img class="thumbnail" src="{{product.image9URL}}">
+                </div>
+        {% endif %}
+
+        {% if product.image11URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image11URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image12URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image12URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image13URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image13URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image14URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image14URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image15URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image15URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image16URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image16URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image17URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image17URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image18URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image18URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image19URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image19URL}}">
+        </div>
+        {% endif %}
+
+        {% if product.image20URL %}
+        <div class="col-lg-4">
+                <img class="thumbnail" src="{{product.image20URL}}">
+        </div>
+        {% endif %}
+
+    </div>
+
 {% endblock content %}

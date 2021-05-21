@@ -76,6 +76,16 @@ class Product(models.Model):
 	image8  = models.ImageField(null=True, blank=True)
 	image9  = models.ImageField(null=True, blank=True)
 	image10 = models.ImageField(null=True, blank=True)
+	image11 = models.ImageField(null=True, blank=True)
+	image12 = models.ImageField(null=True, blank=True)
+	image13 = models.ImageField(null=True, blank=True)
+	image14 = models.ImageField(null=True, blank=True)
+	image15 = models.ImageField(null=True, blank=True)
+	image16 = models.ImageField(null=True, blank=True)
+	image17 = models.ImageField(null=True, blank=True)
+	image18 = models.ImageField(null=True, blank=True)
+	image19 = models.ImageField(null=True, blank=True)
+	image20 = models.ImageField(null=True, blank=True)
 	
 
 	
@@ -91,6 +101,167 @@ class Product(models.Model):
 		except:
 			url = ''
 		return url
+
+	@property
+	def image1URL(self):
+		try:
+			url = self.image1.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image2URL(self):
+		try:
+			url = self.image2.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image3URL(self):
+		try:
+			url = self.image3.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image4URL(self):
+		try:
+			url = self.image4.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image5URL(self):
+		try:
+			url = self.image5.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image6URL(self):
+		try:
+			url = self.image6.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image7URL(self):
+		try:
+			url = self.image7.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image8URL(self):
+		try:
+			url = self.image8.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image9URL(self):
+		try:
+			url = self.image9.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image10URL(self):
+		try:
+			url = self.image10.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image11URL(self):
+		try:
+			url = self.image11.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image12URL(self):
+		try:
+			url = self.image12.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image13URL(self):
+		try:
+			url = self.image13.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image14URL(self):
+		try:
+			url = self.image14.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image15URL(self):
+		try:
+			url = self.image15.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image16URL(self):
+		try:
+			url = self.image16.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image17URL(self):
+		try:
+			url = self.image17.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image18URL(self):
+		try:
+			url = self.image18.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image19URL(self):
+		try:
+			url = self.image19.url
+		except:
+			url = ''
+		return url
+
+	@property
+	def image20URL(self):
+		try:
+			url = self.image20.url
+		except:
+			url = ''
+		return url
+
 
 class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
