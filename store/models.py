@@ -20,28 +20,40 @@ class Customer(models.Model):
 	def __str__(self):
 		return self.name
 
+CAR_MODELS = (
+	('select','SELECT'),
+	('Toyota','TOYOTA'),
+	('B.M.W','B.M.W'),
+	('Subaru','SUBARU'),
+	('Mercedes','MERCEDES'),
+	('Isuzu','ISUZU'),
+	('Nissan','NISSAN'),
+	('Mazda','MAZDA'),
+)
 TRANSMISSIONS = (
 	('select', 'SELECT'),
     ('Manual','MANUAL'),
     ('Automatic', 'AUTOMATIC'),
+    ('Electric', 'ELECTRIC')
 )
 
 FUEL_TYPES = (
 	('select', 'SELECT'),
     ('diesel','DIESEL'),
-    ('petrol', 'PETROL'),
+    ('petrol', 'PETROL')
 )
 
 ENGINE_UNITS = (
 	('select', 'SELECT'),
     ('liter','LITER'),
-    ('cc', 'CC'),
+    ('cc', 'CC')
 )
 
 
 
 
 class Product(models.Model):
+	car_type = models.CharField(max_length=10, choices=CAR_MODELS, default='select', blank=True, null=True)
 	name = models.CharField(max_length=200)
 	model = models.CharField(max_length = 200)
 	engine_capacity = models.FloatField(default=False, blank=True, null=True)
@@ -49,7 +61,6 @@ class Product(models.Model):
 	fuel_type = models.CharField(max_length=20, choices=FUEL_TYPES, default='select')
 	transmission = models.CharField(max_length=20, choices=TRANSMISSIONS, default='select')
 	price = models.FloatField()
-	digital = models.BooleanField(default=False,null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
 	details = models.TextField(default=True, max_length=2000)
 	

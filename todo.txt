@@ -2,7 +2,12 @@
 Login and Sign up Customer Complication ✔️
 Search Functionality ✔️
 
+make 
+images
 Todo
 find out out how to make images show
 Session expiry
+
+Use cookies for Cart even when the user logs in, for now.
+
 Tweak Backend.py
