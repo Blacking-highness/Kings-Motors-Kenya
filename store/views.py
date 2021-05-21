@@ -137,6 +137,8 @@ def contact(request):
 	context = {}
 	return render(request, 'store/contact.html', context)
 
-def faq(request):
-	context = {}
-	return render(request, 'store/faq.html', context)
+
+def view_product(request, pk):
+	product = Product.objects.get(name=pk)
+	context = {'product':product}
+	return render(request, 'store/view_product.html', context)

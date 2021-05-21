@@ -44,6 +44,8 @@
                 <h6>{{product.fuel_type}}</h6>
                 <h6>{{product.engine_capacity}} {{product.engine_capacity_unit}}s</h6>
                 <p>{{product.details | linebreaks }}</p>
+                   
+                <a class="btn btn-outline-success" href="product/{{product}}">View</a>
                 
                 <button data-product="{{product.id}}" 
                         data-action="add" 
