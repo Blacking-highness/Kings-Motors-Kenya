@@ -122,9 +122,9 @@
 			{% endif %}
 	    </ul>
 
-
+<!--
 		<button type="button" id="formButton" class="btn btn-outline-secondary">View / Hide Detailed Search</button>
-
+-->
 		<form class="form-inline" method=POST 
 		action="{% url 'search_results' %}">			
 			
@@ -153,7 +153,6 @@
 	<div class="container" style="background: linear-gradient(#292c2f, white)!important;">
             <br>
             {% block content %}
-
 
             {% endblock content %}
          </div>
